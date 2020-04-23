@@ -1,5 +1,5 @@
 {
-  "name": "hacktiv8-phase1-pairproject",
+  "name": "Seqool",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
+  "repository":{
+    "type": "git",
+    "url": "git+https://github.com/michaelm96/Seqool.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelm96/Seqool/issues" 
+  },
+  "homepage": "https://github.com/michaelm96/Seqool#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "ejs": "^3.0.2",
