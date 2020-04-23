@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+      background-size: cover;
+    }
+
+    th,
+    td {
+      font-style: oblique;
+      font-weight: 600;
+      background-color: seashell;
+      text-align: center;
+    }
+  </style>
+  <title>Subject</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: slateblue;">
+    <a class="navbar-brand" href="#" style="font-style: italic; font-weight: 900; color: ghostwhite;">Seqool</a>
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/student" style="font-weight: 600; color: ghostwhite;">Student</a>
+      <a class="nav-item nav-link active" href="/subjects" style="font-weight: 600; color: ghostwhite;">Subjects</a>
+    </div>
+    <div class="ml-auto">
+      <a class="nav-item nav-link active" href="/logout" style="font-weight: 600; color: red;">Logout</a>
+  </div>
+  </nav>
+  <div class="container">
+    <h2 style="text-align: center;">Student List</h2>
+    <a class="btn btn-primary float-right" href="/subjects/add" role="button">Add Subject</a>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Name Subject</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i=0; i<data.length; i++) { %>
+        <tr>
+          <th scope="row"><%= i+1 %></th>
+          <td><%= data[i].subject %></td>
+          <td><a class="btn btn-warning" href="/subjects/edit/<%= data[i].id %>" role="button">Edit</a> <a
+              class="btn btn-danger" href="/subjects/delete/<%= data[i].id %>" role="button">Delete</a></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+  <div style="position: relative">
+    <p style="position: fixed; bottom: 0; width:100%; text-align: left">Photo by Sharon McCutcheon on Unsplash</p>
+  </div>
+</body>
+
+</html>

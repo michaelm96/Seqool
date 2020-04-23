@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body{
+            background-image: url('https://images.unsplash.com/photo-1494949649109-ecfc3b8c35df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80');
+            background-size: cover;
+        }
+        label,h3,h1{
+            font-weight: 700;
+            color: cornflowerblue;
+        }
+        div.container{
+            max-width: 50%;
+            background-color: darkkhaki;
+            border-radius: 5%;
+            margin-top: 5%;
+        }
+    </style>
+    <title>Register</title>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Seqool</h1>
+        <% if(err) { %>
+            <h4 style="color: red"><%= err %></h4>
+        <% } %>
+        <h3>Login</h3>
+        <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Username</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username" name="username">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    <div style="position: relative">
+        <p style="position: fixed; bottom: 0; width:100%; text-align: left">Photo by Nguyen Khanh Ly on Unsplash</p>
+    </div>
+</body>
+</html>

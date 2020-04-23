@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+            background-size: cover;
+        }
+
+        th,
+        td {
+            font-style: oblique;
+            font-weight: 600;
+            background-color: seashell;
+        }
+    </style>
+    <title>Student</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: slateblue;">
+        <a class="navbar-brand" href="#" style="font-style: italic; font-weight: 900;">Seqool</a>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/student" style="font-weight: 600;">Student</a>
+            <a class="nav-item nav-link active" href="/subjects" style="font-weight: 600;">Subjects</a>
+        </div>
+        <div class="ml-auto">
+            <a class="nav-item nav-link active" href="/logout" style="font-weight: 600; color: red;">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <form action="/student/edit/<%= data.id %>" method="post">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">First name:</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="e.g William" name="first_name"
+                 value="<%= data.first_name %>">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Last name:</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="e.g Joe" name="last_name"
+                value="<%= data.last_name %>">
+            </div>
+            <h5 style="font-weight: 300;">Gender:</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="male" 
+                    <% if(data.gender == "male"){ %>
+                        checked >
+                    <% } else { %>
+                        >
+                    <% } %>
+                <label class="form-check-label" for="exampleRadios1">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="female"
+                <% if(data.gender == "female"){ %>
+                    checked >
+                <% } else { %>
+                    >
+                <% } %>
+                <label class="form-check-label" for="exampleRadios2">
+                  Female
+                </label>
+              </div>
+              <br>
+              <div class='form-group'>
+                  <label for="birth_day">Birthday:</label>
+                  <br>
+                  <input type="date" name="birth_day" id="birth_day" value="<%= data.birth_day %>">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Grade:</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="e.g 3" name="grade" value="<%= data.grade %>">
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+<footer>
+    <p style="color: azure; display: flex; justify-content: flex-end;">Photo by Sharon McCutcheon on Unsplash</p>
+</footer>
+
+</html>
